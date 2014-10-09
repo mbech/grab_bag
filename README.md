@@ -1,4 +1,5 @@
-Code Katas!
+~Code Katas~
 ==============================
 For vim practice and general enjoyment :]
-Kata source: http://codekata.com/
+
+Source of problem/kata can be found in each folder's specs.txt.
