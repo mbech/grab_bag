@@ -1,5 +1,5 @@
-~Code Katas~
+~Grab Bag~
 ==============================
-For vim practice and general enjoyment :]
+Misc small code snippets/challenges for vim practice and general enjoyment :]
 
-Source of problem/kata can be found in each folder's specs.txt.
+Where applicable, source of problem/kata can be found in each folder's specs.txt.
