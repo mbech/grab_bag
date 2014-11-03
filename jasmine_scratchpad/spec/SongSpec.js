@@ -7,7 +7,6 @@ describe("Song", function() {
   });
 
   it("should have a name", function(){
-
     expect(song.getName()).toEqual("Title");
   })
 
