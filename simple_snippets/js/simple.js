@@ -4,3 +4,7 @@ simple_snippets.isFirstCharUpper = function(string){
   var re = /^[A-Z]/;
   return string.match(re) ? true : false; 
 }
+
+simple_snippets.circleArea = function(radius){
+
+}
