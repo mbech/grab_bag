@@ -6,5 +6,5 @@ simple_snippets.isFirstCharUpper = function(string){
 }
 
 simple_snippets.circleArea = function(radius){
-
+  return (radius * radius) * Math.PI;
 }
