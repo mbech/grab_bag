@@ -22,8 +22,8 @@ describe("Simple Snippets", function() {
   describe("Function circleArea(radius)", function(){
     var radius = 10;
 
-    it("should calculate the area correctly for valid radius", function() {
-      expect(simple_snippets.circleArea(radius)).toBeCloseTo(314, 1);
+    it("should calculate the area correctly (to 2 decimals) for valid radius", function() {
+      expect(simple_snippets.circleArea(radius)).toBeCloseTo(314.159, 2);
     });
   });
 });
