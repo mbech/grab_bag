@@ -25,4 +25,11 @@ describe("Simple Snippets", function() {
       expect(simple_snippets.circleArea(radius)).toBeCloseTo(314.159, 2);
     });
   });
+  
+  describe("Function arraySum(array)", function(){
+    var array = [1,2,3,4,5,-15];
+    it("should correctly sum up array elements", function() {
+      expect(simple_snippets.arraySum(array)).toEqual(0);
+    });
+  });
 });
