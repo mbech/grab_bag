@@ -17,7 +17,13 @@ describe("Simple Snippets", function() {
     it("should return false if first char of string is a non-char (number)", function() {
       expect(simple_snippets.isFirstCharUpper(lower_string)).toBeFalsy();
     });
-
   });
 
+  describe("Function circleArea(radius)", function(){
+    var radius = 10;
+
+    it("should calculate the area correctly for valid radius", function() {
+      expect(simple_snippets.circleArea(radius)).toBeCloseTo(314, 1);
+    });
+  });
 });
