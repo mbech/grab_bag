@@ -27,9 +27,13 @@ describe("Simple Snippets", function() {
   });
   
   describe("Function arraySum(array)", function(){
-    var array = [1,2,3,4,5,-15];
+    var num_array = [1,2,3,4,5,-15];
+    var string_array = ["blue", 4, "2"];
     it("should correctly sum up array elements", function() {
-      expect(simple_snippets.arraySum(array)).toEqual(0);
+      expect(simple_snippets.arraySum(num_array)).toEqual(0);
+    });
+    it("should correctly sum up strings", function() {
+      expect(simple_snippets.arraySum(string_array)).toEqual("blue42");
     });
   });
 });
