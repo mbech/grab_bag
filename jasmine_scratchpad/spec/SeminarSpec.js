@@ -11,7 +11,7 @@ describe("Seminar", function(){
   })
 
   it("should have a price", function(){
-    expect(seminar.getPrice()).toEqual("100");
+    expect(seminar.getPrice()).toEqual(100);
   })
 
 })
