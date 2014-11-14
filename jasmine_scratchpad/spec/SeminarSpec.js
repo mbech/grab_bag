@@ -14,4 +14,8 @@ describe("Seminar", function(){
     expect(seminar.getPrice()).toEqual(100);
   })
 
+  it("should have a gross price with a VAT of 20%", function(){
+    expect(seminar.getGrossPrice()).toEqual(120);
+  })
+
 })
