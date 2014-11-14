@@ -19,6 +19,11 @@ describe("Seminar", function(){
   })
 
   describe("Tax Free Seminar", function(){
+    
+    beforeEach(function(){
+      seminar = Seminar.create({isTaxFree: true});
+    });
+
     it("should have a gross price equal to base price", function(){
       expect(seminar.getPrice()).toEqual(seminar.getGrossPrice());
     })

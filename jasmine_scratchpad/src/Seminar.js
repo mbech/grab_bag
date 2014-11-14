@@ -4,6 +4,7 @@ Seminar.create = function(initObj){
   var instance = Object.create(this);
   instance.name = initObj.name || "Unknown";
   instance.price = initObj.price || "Unknown";
+  instance.isTaxFree = initObj.isTaxFree || false;
   return instance;
 };
 
@@ -16,5 +17,5 @@ Seminar.getPrice = function(){
 };
 
 Seminar.getGrossPrice = function(){
-  return this.price * 1.20;
+  return this.isTaxFree ? this.price : this.price * 1.20;
 };
