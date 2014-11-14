@@ -18,4 +18,10 @@ describe("Seminar", function(){
     expect(seminar.getGrossPrice()).toEqual(120);
   })
 
+  describe("Tax Free Seminar", function(){
+    it("should have a gross price equal to base price", function(){
+      expect(seminar.getPrice()).toEqual(seminar.getGrossPrice());
+    })
+  })
+
 })

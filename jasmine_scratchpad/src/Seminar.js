@@ -14,3 +14,7 @@ Seminar.getName = function(){
 Seminar.getPrice = function(){
   return this.price;
 };
+
+Seminar.getGrossPrice = function(){
+  return this.price * 1.20;
+};
