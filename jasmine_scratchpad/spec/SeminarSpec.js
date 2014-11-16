@@ -19,7 +19,7 @@ describe("Seminar", function(){
   })
 
   describe("Tax Free Seminar", function(){
-    
+
     beforeEach(function(){
       seminar = Seminar.create({isTaxFree: true});
     });
