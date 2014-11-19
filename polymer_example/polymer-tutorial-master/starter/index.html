@@ -23,6 +23,24 @@ html,body {
   background-color: #E5E5E5;
   font-family: 'RobotoDraft', sans-serif;
 }
+core-header-panel {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; 
+}
+core-toolbar {
+  background: green;
+  color: white;
+}
+#tabs {
+  width: 100%;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-transform: uppercase;
+}
 .container {
   width: 80%;
   margin: 50px auto;
@@ -35,20 +53,22 @@ html,body {
     width: 400px;
   }
 }
+
+
 </style>
 
 </head>
 
 <body unresolved>
-  <core-header-panel>
-    <core-toolbar>
-    <paper-tabs id="tabs" selected="all" self-end>
-    <paper-tab noink="true">1</paper-tab>
-    <paper-tab>2</paper-tab>
-    <paper-tab>3</paper-tab>
-    </paper-tabs>
-    </core-toolbar>
-  </core-header-panel>
+<core-header-panel>
+<core-toolbar>
+<paper-tabs id="tabs" selected="all" self-end>
+<paper-tab noink="true">1</paper-tab>
+<paper-tab>2</paper-tab>
+<paper-tab>3</paper-tab>
+</paper-tabs>
+</core-toolbar>
+</core-header-panel>
 
 </body>
 
