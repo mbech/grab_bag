@@ -67,8 +67,8 @@ core-toolbar {
   <core-header-panel>
     <core-toolbar>
       <paper-tabs id="tabs" selected="all" self-end>
-        <paper-tab>All</paper-tab>
-        <paper-tab>Favorites</paper-tab>
+        <paper-tab name="all">All</paper-tab>
+        <paper-tab name="favorites">Favorites</paper-tab>
       </paper-tabs>
     </core-toolbar>
 
@@ -80,10 +80,12 @@ core-toolbar {
 
   <script>
     var tabs = document.querySelector('paper-tabs');
+    var list = document.querySelector('post-list');
 
     tabs.addEventListener('core-select', function() {
-      console.log("Selected: " + tabs.selected);
+      list.show = tabs.selected;
     });
+
   </script>
 
 </body>
