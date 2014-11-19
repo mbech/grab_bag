@@ -15,6 +15,7 @@ content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable
 <link rel="import" href="../components/core-header-panel/core-header-panel.html">
 <link rel="import" href="../components/core-toolbar/core-toolbar.html">
 <link rel="import" href="../components/paper-tabs/paper-tabs.html">
+<link rel="import" href="post-card.html">
 
 <style>
 html,body {
@@ -69,6 +70,16 @@ core-toolbar {
         <paper-tab>Featured</paper-tab>
       </paper-tabs>
     </core-toolbar>
+
+    <div class="container" layout vertical center>
+      <post-card>
+        <img width="70" height="70" 
+        src="../images/avatar-07.svg">
+        <h2>Another Developer</h2>
+        <p>I'm composing with shadow DOM!</p>
+      </post-card>
+    </div>
+
   </core-header-panel>
 
   <script>
