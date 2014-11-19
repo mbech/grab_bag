@@ -41,6 +41,7 @@ core-toolbar {
   user-select: none;
   text-transform: uppercase;
 }
+
 .container {
   width: 80%;
   margin: 50px auto;
@@ -60,15 +61,23 @@ core-toolbar {
 </head>
 
 <body unresolved>
-<core-header-panel>
-<core-toolbar>
-<paper-tabs id="tabs" selected="all" self-end>
-<paper-tab noink="true">1</paper-tab>
-<paper-tab>2</paper-tab>
-<paper-tab>3</paper-tab>
-</paper-tabs>
-</core-toolbar>
-</core-header-panel>
+
+  <core-header-panel>
+    <core-toolbar>
+      <paper-tabs id="tabs" selected="all" self-end>
+        <paper-tab>Home</paper-tab>
+        <paper-tab>Featured</paper-tab>
+      </paper-tabs>
+    </core-toolbar>
+  </core-header-panel>
+
+  <script>
+    var tabs = document.querySelector('paper-tabs');
+
+    tabs.addEventListener('core-select', function() {
+      console.log("Selected: " + tabs.selected);
+    });
+  </script>
 
 </body>
 
