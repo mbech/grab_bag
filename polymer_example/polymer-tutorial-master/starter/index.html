@@ -3,43 +3,52 @@
 
 <head>
 
-  <title>unquote</title>
+<title>unquote</title>
 
-  <meta name="viewport" 
-  content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+<meta name="viewport" 
+content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-  <script src="../components/webcomponentsjs/webcomponents.js">
-  </script>
+<script src="../components/webcomponentsjs/webcomponents.js">
+</script>
 
-  <link rel="import" href="../components/font-roboto/roboto.html">
-  <link rel="import" href="../components/core-header-panel/core-header-panel.html">
-  <link rel="import" href="../components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="../components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../components/font-roboto/roboto.html">
+<link rel="import" href="../components/core-header-panel/core-header-panel.html">
+<link rel="import" href="../components/core-toolbar/core-toolbar.html">
+<link rel="import" href="../components/paper-tabs/paper-tabs.html">
 
-  <style>
-  html,body {
-    height: 100%;
-    margin: 0;
-    background-color: #E5E5E5;
-    font-family: 'RobotoDraft', sans-serif;
+<style>
+html,body {
+  height: 100%;
+  margin: 0;
+  background-color: #E5E5E5;
+  font-family: 'RobotoDraft', sans-serif;
+}
+.container {
+  width: 80%;
+  margin: 50px auto;
+}
+@media (min-width: 481px) {
+  #tabs {
+    width: 200px;
   }
   .container {
-    width: 80%;
-    margin: 50px auto;
+    width: 400px;
   }
-  @media (min-width: 481px) {
-    #tabs {
-      width: 200px;
-    }
-    .container {
-      width: 400px;
-    }
-  }
-  </style>
+}
+</style>
 
 </head>
 
 <body unresolved>
+  <core-header-panel>
+    <core-toolbar>
+    <paper-tabs id="tabs" selected="all" self-end>
+    <paper-tab noink="true">1</paper-tab>
+    <paper-tab>2</paper-tab>
+    <paper-tab>3</paper-tab>
+    </paper-tabs>
+    </core-toolbar>
+  </core-header-panel>
 
 </body>
 
