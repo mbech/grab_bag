@@ -6,5 +6,5 @@
 # ["abc", "4567", "another_key"]
 #
 def sortHashKeys( hash )
-  hash.keys.sort!
+  hash.keys.map{|key| key.to_s}.sort!
 end
