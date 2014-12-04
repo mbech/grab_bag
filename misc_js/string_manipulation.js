@@ -29,3 +29,25 @@ var recursiveStringPermute = function(string, prefix){
   }
 };
 
+//Write a function to find out longest palindrome in a given string?
+var findLongestPalindrome = function(str){
+  var charHash = {};
+  var i = str.length;
+  while (i--){
+    if(str[i] in charHash){
+      charHash[str[i]] += 1;
+    } else {
+      charHash[str[i]] = 1;
+    }
+  }
+  var palindrome = "";
+  for(var prop in charHash){
+    if(charHash.hasOwnProperty(prop)){
+      while (charHash[prop] > 1){
+        palindrome = prop + palindrome + prop;
+        charHash[prop] -= 2;
+      }
+    }
+  }
+  return palindrome;
+};
