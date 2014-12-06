@@ -11,4 +11,3 @@ elif (($X == $Y)); then
 elif(($X > $Y)); then
   echo "X is greater than Y"
 fi
-
