@@ -2,7 +2,7 @@
 //and justify your decision. Design the interface to your stack to be complete, 
 //consistent, and easy to use.
 
-//FILO
+//LIFO
 
 var Node = function(data){
   this.data = data;
