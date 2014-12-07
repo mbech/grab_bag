@@ -4,58 +4,51 @@
 
 //FILO
 
-var Stack = function(initial_value){
-  this.data = initial_value;
-  this.next_node = null;
+var Node = function(data){
+  this.data = data;
+  this.nextNode = null;
 }
 
-Stack.prototype.push = function(value){
-  this.getLastNode().next_node = {
-    data: value,
-    next_node: null
-  }
-  return 1;
+var Stack = function(data){
+  this.head = new Node(data);
 }
 
-Stack.prototype.pop = function(){
-  var current_node = this.next_node;
-  var prev_node = {};
-  //if it's the last value on the stack, null data field and return 
-  if(current_node === null){
-    var value = this.data;
-    this.data = null;
-    return value;
+Stack.prototype = {
+  push: function(data){
+    var currentNode = this.head;
+    while(currentNode.nextNode !== null){
+      currentNode = currentNode.nextNode;
+    }
+    currentNode.nextNode = new Node(data);
+    return this;
+  },
+  pop: function(data){
+    var currentNode = this.head;
+    var prevNode = null;
+    if(currentNode === null){
+      return null; 
+    }
+    if(currentNode.nextNode === null){
+      var popData = currentNode.data;
+      this.head = null;
+      return popData;
+    }
+    while(currentNode.nextNode !== null){
+      prevNode = currentNode;
+      currentNode = currentNode.nextNode;
+    }
+    var popData = currentNode.data;
+    prevNode.nextNode = null;
+    return popData;
   }
-  while(current_node.next_node !== null){
-    prev_node = current_node;
-    current_node = current_node.next_node;
-  }
-  prev_node.next_node = null;
-  return current_node.data;
 }
 
-Stack.prototype.getLastNode = function(){
-  var current_node = this.next_node;
-  while(current_node.next_node !== null){
-    current_node = current_node.next_node; 
-  }
-  return current_node;
-}
-
-Stack.prototype.toString = function(){
-  if(this.data === null){
-    return "Stack is empty";
-  }
-  var stackStr = "| " + this.data;
-  var current_node = this.next_node;
-  while(current_node.next_node !== null){
-    stackStr += current_node.data;
-    current_node = current_node.next_node; 
-  }
-  return (stackStr + " |");
-}
-
-console.log("making stack...");
-var my_stack = new Stack(22);
-console.log(my_stack.toString());
-
+var myStack = new Stack(15);
+console.log(myStack);
+myStack.push(55).push("hello").push(33);
+console.log(myStack);
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
+console.log(myStack.pop());
