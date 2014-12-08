@@ -11,4 +11,13 @@ var myClone = function(obj){
   return cloneObj;
 }
 
+var incrementor = function(baseval){
+  if(typeof baseval === "undefined"){
+    baseval = 0; 
+  }
 
+  return function(){
+      return ++baseval;
+    }
+  
+}
