@@ -20,5 +20,10 @@ findDuplicate = function(array) {
 
 //Implement bubblesort
 bubbleSort = function(array) {
-
+  var len = array.length;
+  var sorted = false;
+  
+  while (i-- || sorted) {
+      
+  }
 };
