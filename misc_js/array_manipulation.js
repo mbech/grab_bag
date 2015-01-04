@@ -21,9 +21,27 @@ findDuplicate = function(array) {
 //Implement bubblesort
 bubbleSort = function(array) {
   var len = array.length;
-  var sorted = false;
-  
-  while (i-- || sorted) {
-      
+  var unsorted = true;
+  var totalSwaps = 0;
+
+  while (unsorted) {
+    var swaps = 0;
+    for (var i = 0, l = array.length; i < l; i ++) {
+      //note: array[i+1] will be undefined on last interation, ">" comparison
+      //will fail (false condition for if statment) and not attempt to swap
+      if (array[i] > array[i+1]) {
+        var swap = array[i+1]; 
+        array[i+1] = array[i];
+        array[i] = swap;
+        swaps++;
+      }
+    }
+    if (swaps === 0) {
+      //No swaps on this pass, so array is sorted
+      unsorted = false; 
+    }
+    totalSwaps += swaps;
   }
+  console.log("total swaps: " + totalSwaps);
+  return array;
 };
