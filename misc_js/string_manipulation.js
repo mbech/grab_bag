@@ -50,3 +50,28 @@ var findLongestPalindrome = function(str){
   }
   return palindrome;
 };
+
+/*
+   Input: string
+   Output: boolean
+
+   Checks whether the input is a palindrome (reversed word equal to original)
+   */
+
+var isPalindrome = function(string){
+  if (typeof string !== "string"){
+    throw new Error("Input must be a string."); 
+  }
+
+  var leftIndex = 0,
+      rightIndex = string.length - 1;
+
+  while (leftIndex < rightIndex){
+    if (string[leftIndex] !== string[rightIndex]){
+      return false;
+    }     
+    ++leftIndex;
+    --rightIndex;
+  }
+  return true;
+};

@@ -6,8 +6,8 @@
         palindrome = "amanaplanacanalpanama";
 
     result = isPalindrome(nonPalindrome);
-    assert.equal( result === false, "non-palindrome" );
+    assert.equal( result, false, "non-palindrome" );
     result = isPalindrome(palindrome);
-    assert.equal( result === true, "palindrome" );
+    assert.equal( result, true, "palindrome" );
   });
 }());
