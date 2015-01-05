@@ -1,6 +1,6 @@
 var Stack = function(data){
   this.store = [data];
-}
+};
 
 Stack.prototype = {
   pop: function(){

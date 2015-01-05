@@ -7,11 +7,11 @@
 var Node = function(data){
   this.data = data;
   this.nextNode = null;
-}
+};
 
 var Stack = function(data){
   this.head = new Node(data);
-}
+};
 
 Stack.prototype = {
   push: function(data){
@@ -23,13 +23,15 @@ Stack.prototype = {
     return this;
   },
   pop: function(data){
-    var currentNode = this.head;
-    var prevNode = null;
+    var currentNode = this.head,
+    prevNode = null,
+    popData = null;
+
     if(currentNode === null){
       return null; 
     }
     if(currentNode.nextNode === null){
-      var popData = currentNode.data;
+      popData = currentNode.data;
       this.head = null;
       return popData;
     }
@@ -37,11 +39,11 @@ Stack.prototype = {
       prevNode = currentNode;
       currentNode = currentNode.nextNode;
     }
-    var popData = currentNode.data;
+    popData = currentNode.data;
     prevNode.nextNode = null;
     return popData;
   }
-}
+};
 
 var myStack = new Stack(15);
 console.log(myStack);

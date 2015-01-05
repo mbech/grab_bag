@@ -9,7 +9,7 @@ var myClone = function(obj){
     }
   }
   return cloneObj;
-}
+};
 
 var incrementor = function(baseval){
   if(typeof baseval === "undefined"){
@@ -18,6 +18,6 @@ var incrementor = function(baseval){
 
   return function(){
       return ++baseval;
-    }
+    };
   
-}
+};
