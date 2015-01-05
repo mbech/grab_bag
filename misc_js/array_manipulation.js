@@ -106,3 +106,34 @@ function containsZeroSum(array) {
   }
   return false;
 };
+
+/*
+   Finds the smallest range across three arrays
+   Input: 3 ordered arrays
+   Output: smallest range (smallest difference between any 2 elements)
+   */
+function findSmallestRange(arr1, arr2, arr3) {
+  var arrConcat = arr1.concat(arr2).concat(arr3),
+      len,
+      minDiff,
+      rangeLow,
+      rangeHigh;
+
+  arrConcat.sort(function(a,b){
+    return a - b;   
+  });
+
+  len = arrConcat.length;
+  rangeLow = arrConcat[len-2];
+  rangeHigh = arrConcat[len-1];
+  minDiff = rangeHigh - rangeLow;  
+
+  while (len--) {
+    if ( (arrConcat[len] - arrConcat[len-1]) < minDiff ) {
+      rangeLow = arrConcat[len-1];
+      rangeHigh = arrConcat[len];
+      minDiff = rangeHigh - rangeLow;  
+    }
+  }
+  return [rangeLow, rangeHigh];
+};
