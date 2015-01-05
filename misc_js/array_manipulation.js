@@ -47,3 +47,29 @@ bubbleSort = function(array) {
   console.log("total swaps: " + totalSwaps);
   return array;
 };
+
+/*
+Input: array of strings
+Output: array of only palindrome strings
+
+Palindrome array filter
+*/
+function palindromeFilter(array){
+        return array.filter(function(ele){
+            return isPalindromeHelper(ele); 
+        });
+    };
+   
+function isPalindromeHelper(string){
+    var leftIndex = 0,
+        rightIndex = string.length - 1;
+        
+    while (leftIndex < rightIndex){
+        if (string[leftIndex] !== string[rightIndex]){
+            return false;
+        }
+        ++leftIndex;
+        --rightIndex;
+    }
+    return true;
+};
