@@ -49,27 +49,60 @@ bubbleSort = function(array) {
 };
 
 /*
-Input: array of strings
-Output: array of only palindrome strings
+   Input: array of strings
+   Output: array of only palindrome strings
 
-Palindrome array filter
-*/
+   Palindrome array filter
+   */
 function palindromeFilter(array){
-        return array.filter(function(ele){
-            return isPalindromeHelper(ele); 
-        });
-    };
-   
+  return array.filter(function(ele){
+    return isPalindromeHelper(ele); 
+  });
+};
+
 function isPalindromeHelper(string){
-    var leftIndex = 0,
-        rightIndex = string.length - 1;
-        
-    while (leftIndex < rightIndex){
-        if (string[leftIndex] !== string[rightIndex]){
-            return false;
-        }
-        ++leftIndex;
-        --rightIndex;
+  var leftIndex = 0,
+      rightIndex = string.length - 1;
+
+  while (leftIndex < rightIndex){
+    if (string[leftIndex] !== string[rightIndex]){
+      return false;
     }
-    return true;
+    ++leftIndex;
+    --rightIndex;
+  }
+  return true;
+};
+
+/* 
+   Palindrome array filter function
+   Input: array of strings
+   Output: filtered array containing palindromes
+   */
+
+function palindromeFilter2(array) {
+  return array.filter(function(string){
+    return string === string.split('').reverse().join('');
+  });
+};
+
+/*
+   Return true if sum of any two numbers in array is 0
+   Input: array of numbers
+   Output: boolean
+   */
+
+function containsZeroSum(array) {
+  //While there are at least 2 elements to compare
+  while(array.length > 1) {
+    for(var i = 1, len = array.length; i < len; i++) {
+      if ( (array[0] + array[i]) === 0) {
+        return true;
+      }
+    }
+    //Checked first element against all the rest, no match, so remove
+    //and loop again with 'new' first element
+    array.shift();
+  }
+  return false;
 };
