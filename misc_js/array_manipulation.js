@@ -137,3 +137,30 @@ function findSmallestRange(arr1, arr2, arr3) {
   }
   return [rangeLow, rangeHigh];
 };
+
+/*
+Bubblesort
+Input: unordered array of numbers
+Output: ordered array of numbers
+*/
+
+function bubSort(array) {
+        var sorted = false,
+            len = array.length,
+            swapping = true;
+        
+        while (swapping) {
+          swapping = false;
+          for (var i = 0; i < len; i++) {
+            if (array[i] > array[i+1]) {
+              //Out of order pair, so switch their positions
+              var swap = array[i+1];
+              array[i+1] = array[i];
+              array[i] = swap;
+              swapping = true;
+            }
+          }
+        }
+        //While loop ends if for loop triggers no swaps (i.e. array is sorted)
+        return array;
+};
