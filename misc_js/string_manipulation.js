@@ -1,7 +1,7 @@
 //Write a method which will remove any given character from a String
 var removeChar = function(string, character){
-  var len = string.length;
-  var output = "";
+  var len = string.length,
+      output = "";
 
   for(var i = 0; i < len; i++){
     if ( string[i] !== character ){
@@ -30,8 +30,10 @@ var recursiveStringPermute = function(string, prefix){
 
 //Write a function to find out longest palindrome in a given string?
 var findLongestPalindrome = function(str){
-  var charHash = {};
-  var i = str.length;
+  var charHash = {},
+      i = str.length,
+      palindrome = "";
+
   while (i--){
     if(str[i] in charHash){
       charHash[str[i]] += 1;
@@ -39,7 +41,7 @@ var findLongestPalindrome = function(str){
       charHash[str[i]] = 1;
     }
   }
-  var palindrome = "";
+
   for(var prop in charHash){
     if(charHash.hasOwnProperty(prop)){
       while (charHash[prop] > 1){
