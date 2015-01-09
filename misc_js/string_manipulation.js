@@ -18,7 +18,7 @@ var recursiveStringPermute = function(string, prefix){
   }
   var len = string.length;
   if (len === 1){
-    //recursion bottomed out
+    //recursion end condition
     console.log(prefix + string);
   } else {
     for(var i = 0; i < len; i++){
