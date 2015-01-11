@@ -9,8 +9,8 @@ secondMax = function(array) {
 
 //In an array 1-100 exactly one number is duplicate how do you find it
 findDuplicate = function(array) {
-  var hash = {}; 
-  var i = array.length;
+  var hash = {}, 
+      i = array.length;
   while (i--) {
     if (hash[array[i]]) {
       return array[i];
@@ -22,9 +22,9 @@ findDuplicate = function(array) {
 
 //Implement bubblesort
 bubbleSort = function(array) {
-  var len = array.length;
-  var unsorted = true;
-  var totalSwaps = 0;
+  var len = array.length,
+      unsorted = true,
+      totalSwaps = 0;
 
   while (unsorted) {
     var swaps = 0;
@@ -58,7 +58,7 @@ function palindromeFilter(array){
   return array.filter(function(ele){
     return isPalindromeHelper(ele); 
   });
-};
+}
 
 function isPalindromeHelper(string){
   var leftIndex = 0,
@@ -72,7 +72,7 @@ function isPalindromeHelper(string){
     --rightIndex;
   }
   return true;
-};
+}
 
 /* 
    Palindrome array filter function
@@ -84,7 +84,7 @@ function palindromeFilter2(array) {
   return array.filter(function(string){
     return string === string.split('').reverse().join('');
   });
-};
+}
 
 /*
    Return true if sum of any two numbers in array is 0
@@ -105,7 +105,7 @@ function containsZeroSum(array) {
     array.shift();
   }
   return false;
-};
+}
 
 /*
    Finds the smallest range across three arrays
@@ -136,7 +136,7 @@ function findSmallestRange(arr1, arr2, arr3) {
     }
   }
   return [rangeLow, rangeHigh];
-};
+}
 
 /*
 Bubblesort
@@ -163,4 +163,4 @@ function bubSort(array) {
         }
         //While loop ends if for loop triggers no swaps (i.e. array is sorted)
         return array;
-};
+}
