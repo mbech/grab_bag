@@ -1,3 +1,4 @@
+//Object-related misc functions
 var myClone = function(obj){
   var cloneObj = {};
   if(obj === null || typeof obj != "object"){

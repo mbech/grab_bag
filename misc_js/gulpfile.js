@@ -1,11 +1,19 @@
 var gulp = require('gulp'),
     jshint = require('gulp-jshint');
 
-gulp.task('default', ['jshint']);
+var paths = {
+    js: ['./*js']
+};
+
+gulp.task('default', ['watch']);
+
+gulp.task('watch', function(){
+  gulp.watch(paths.js, ['jshint']);
+});
 
 //JSHint
 gulp.task('jshint', function(){
-  gulp.src('./*.js')
+  gulp.src(paths.js)
       .pipe(jshint())
       .pipe(jshint.reporter('default'));
 });

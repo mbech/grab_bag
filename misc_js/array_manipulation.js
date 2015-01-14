@@ -1,3 +1,5 @@
+//Array-related misc functions
+//
 //Find second highest number in an integer array
 secondMax = function(array) {
   var max, sorted;
