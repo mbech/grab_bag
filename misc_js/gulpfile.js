@@ -1,19 +1,25 @@
 var gulp = require('gulp'),
-    jshint = require('gulp-jshint');
+    jshint = require('gulp-jshint'),
+    qunit = require('node-qunit-phantomjs');
 
 var paths = {
-    js: ['./*js']
+    js: ['./*js', './test/*.js'],
 };
 
 gulp.task('default', ['watch']);
 
 gulp.task('watch', function(){
-  gulp.watch(paths.js, ['jshint']);
+  return gulp.watch(paths.js, ['jshint', 'qunit']);
 });
 
 //JSHint
 gulp.task('jshint', function(){
-  gulp.src(paths.js)
+  return gulp.src(paths.js)
       .pipe(jshint())
       .pipe(jshint.reporter('default'));
+});
+
+//QUnit
+gulp.task('qunit', function(){
+  return qunit('./test/index.html');
 });
