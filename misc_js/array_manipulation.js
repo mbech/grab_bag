@@ -113,7 +113,6 @@ function containsZeroSum(array) {
 /*
    Finds the smallest range across three arrays
    Input: 3 ordered arrays
-   Output: smallest range (smallest difference between any 2 elements)
    */
 function findSmallestRange(arr1, arr2, arr3) {
   var arrConcat = arr1.concat(arr2).concat(arr3),
