@@ -1,5 +1,5 @@
 //Array-related misc functions
-//
+
 //Find second highest number in an integer array
 secondMax = function(array) {
   var max, sorted;
@@ -32,8 +32,10 @@ bubbleSort = function(array) {
   while (unsorted) {
     var swaps = 0;
     for (var i = 0, l = array.length; i < l; i ++) {
-      //note: array[i+1] will be undefined on last interation, ">" comparison
-      //will fail (false condition for if statment) and not attempt to swap
+      /**
+       * note: array[i+1] will be undefined on last interation, ">" comparison
+       * will fail (false condition for if statment) and not attempt to swap
+       */
       if (array[i] > array[i+1]) {
         var swap = array[i+1]; 
         array[i+1] = array[i];
@@ -42,6 +44,7 @@ bubbleSort = function(array) {
       }
     }
     if (swaps === 0) {
+
       //No swaps on this pass, so array is sorted
       unsorted = false; 
     }
@@ -51,12 +54,12 @@ bubbleSort = function(array) {
   return array;
 };
 
-/*
-   Input: array of strings
-   Output: array of only palindrome strings
-
-   Palindrome array filter
-   */
+/**
+ * Input: array of strings
+ * Output: array of only palindrome strings
+ *
+ * Palindrome array filter
+ */
 function palindromeFilter(array){
   return array.filter(function(ele){
     return isPalindromeHelper(ele); 
@@ -77,25 +80,24 @@ function isPalindromeHelper(string){
   return true;
 }
 
-/* 
-   Palindrome array filter function
-   Input: array of strings
-   Output: filtered array containing palindromes
-   */
-
+/**
+ * Palindrome array filter function
+ * Input: array of strings
+ * Output: filtered array containing palindromes
+ */
 function palindromeFilter2(array) {
   return array.filter(function(string){
     return string === string.split('').reverse().join('');
   });
 }
 
-/*
-   Return true if sum of any two numbers in array is 0
-   Input: array of numbers
-   Output: boolean
-   */
-
+/**
+ * Return true if sum of any two numbers in array is 0
+ * Input: array of numbers
+ * Output: boolean
+ */
 function containsZeroSum(array) {
+
   //While there are at least 2 elements to compare
   while(array.length > 1) {
     for(var i = 1, len = array.length; i < len; i++) {
@@ -103,6 +105,7 @@ function containsZeroSum(array) {
         return true;
       }
     }
+
     //Checked first element against all the rest, no match, so remove
     //and loop again with 'new' first element
     array.shift();
@@ -110,10 +113,10 @@ function containsZeroSum(array) {
   return false;
 }
 
-/*
-   Finds the smallest range across three arrays
-   Input: 3 ordered arrays
-   */
+/**
+ * Finds the smallest range across three arrays
+ * Input: 3 ordered arrays
+ */
 function findSmallestRange(arr1, arr2, arr3) {
   var arrConcat = arr1.concat(arr2).concat(arr3),
       len,
@@ -140,29 +143,29 @@ function findSmallestRange(arr1, arr2, arr3) {
   return [rangeLow, rangeHigh];
 }
 
-/*
-Bubblesort
-Input: unordered array of numbers
-Output: ordered array of numbers
-*/
-
+/**
+ * Bubblesort
+ * Input: unordered array of numbers
+ * Output: ordered array of numbers
+ */
 function bubSort(array) {
-        var sorted = false,
-            len = array.length,
-            swapping = true;
-        
-        while (swapping) {
-          swapping = false;
-          for (var i = 0; i < len; i++) {
-            if (array[i] > array[i+1]) {
-              //Out of order pair, so switch their positions
-              var swap = array[i+1];
-              array[i+1] = array[i];
-              array[i] = swap;
-              swapping = true;
-            }
-          }
-        }
-        //While loop ends if for loop triggers no swaps (i.e. array is sorted)
-        return array;
+  var sorted = false,
+      len = array.length,
+      swapping = true;
+
+  while (swapping) {
+    swapping = false;
+    for (var i = 0; i < len; i++) {
+      if (array[i] > array[i+1]) {
+
+        //Out of order pair, so switch their positions
+        var swap = array[i+1];
+        array[i+1] = array[i];
+        array[i] = swap;
+        swapping = true;
+      }
+    }
+  }
+  //While loop ends if for loop triggers no swaps (i.e. array is sorted)
+  return array;
 }
